@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Privacy Policy - Cranix Ltd</title>
+    <style>
+        /* --- CORPORATE THEME --- */
+        :root {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.9);
+            --primary: #ffffff;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: #262626;
+        }
+
+        /* --- UNIVERSAL FIXES --- */
+        @view-transition { navigation: auto; }
+        html { overflow-y: scroll; } 
+        
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-color); color: var(--text-main); display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* FIXED NAVBAR */
+        nav { 
+            height: 80px; padding: 0 40px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border); background: var(--nav-bg); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-sizing: border-box;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.2rem; }
+        .brand img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* LEGAL CONTENT */
+        .container { 
+            max-width: 800px; margin: 0 auto; padding: 60px 20px; flex: 1; 
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1; }
+        .date { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 50px; display: block; }
+
+        h2 { margin-top: 50px; font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; color: var(--primary); }
+        h3 { margin-top: 30px; font-size: 1.1rem; color: #fff; }
+        
+        p, ul { color: var(--text-muted); line-height: 1.7; font-size: 1rem; margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        strong { color: #fff; }
+
+        footer { margin-top: auto; border-top: 1px solid var(--border); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+        footer a { color: var(--text-muted); text-decoration: none; transition: 0.2s; margin: 0 10px; }
+        footer a:hover { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand"><img src="logo.png" alt="Logo">Cranix Ltd</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="https://discord.gg/NTkDRtyzDX" target="_blank">Support</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <span class="date">Last Updated: December 8, 2025</span>
+
+        <p>At Cranix Ltd ("we", "us", or "our"), we respect your privacy. This policy explains how we handle information across our ecosystem of products.</p>
+
+        <h2>1. CranixCloud (Desktop App)</h2>
+        <p>CranixCloud is a desktop client for streaming audio.</p>
+        <ul>
+            <li><strong>Local Data Storage:</strong> CranixCloud stores your preferences, settings, and cache locally on your device. We do not upload this data to our servers.</li>
+            <li><strong>Third-Party Auth:</strong> SoundCloud authentication tokens are stored securely on your local machine. Cranix Ltd never sees your password.</li>
+        </ul>
+
+        <h2>2. Cranix Bot (Discord App)</h2>
+        <ul>
+            <li><strong>IDs:</strong> We store User IDs and Server IDs to manage permissions, configurations, and moderation logs.</li>
+            <li><strong>Message Content:</strong> Messages are processed in real-time for auto-moderation commands and discarded immediately. We do not store chat logs permanently.</li>
+        </ul>
+
+        <h2>3. CranixOne (Communication Platform)</h2>
+        <p>Currently in development. Our privacy principles for this platform are:</p>
+        <ul>
+            <li><strong>End-to-End Encryption:</strong> We aim to implement E2EE for all private messaging and calls, meaning even we cannot read your messages.</li>
+            <li><strong>Metadata:</strong> We may store minimal metadata (time of call, participants) to facilitate connection stability.</li>
+        </ul>
+
+        <h2>4. CraNotes (Note-Taking)</h2>
+        <ul>
+            <li><strong>Offline-First:</strong> CraNotes is designed to store data locally on your device by default.</li>
+            <li><strong>Cloud Sync:</strong> If you opt-in to cloud sync, your notes will be encrypted before being uploaded to our servers. We utilize zero-knowledge encryption where possible.</li>
+        </ul>
+
+        <h2>5. Cranexus (Game Stats)</h2>
+        <ul>
+            <li><strong>Public APIs:</strong> Cranexus aggregates data from public game APIs (e.g., Riot Games, Valve). We do not collect personal game credentials (passwords).</li>
+            <li><strong>Analytics:</strong> We may analyze your match history to provide performance insights. This data is anonymized where possible.</li>
+        </ul>
+
+        <h2>6. Data Retention & Deletion</h2>
+        <p>You may request data deletion at any time by contacting us via our Support Server. For local-only apps (CranixCloud, CraNotes offline), simply uninstalling the app removes the data.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions, please open a ticket in our <a href="https://discord.gg/NTkDRtyzDX" style="color:white">Discord Support Server</a>.</p>
+    </div>
+
+<!-- UPDATED FOOTER STRUCTURE -->
+    <footer>
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <div>&copy; 2025 Cranix Ltd. All rights reserved.</div>
+            <div style="font-size: 0.9rem;">
+                <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Privacy Policy</a>
+                <span style="opacity: 0.3; margin: 0 10px;">&bull;</span>
+                <a href="terms.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,169 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
     <title>Cranix Bot</title>
     <style>
-        /* GLOBAL STYLES */
+        /* --- DISCORD BLUE THEME --- */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-secondary: #94a3b8;
+            --bg-color: #020617;
+            --nav-bg: rgba(2, 6, 23, 0.9);
+            --primary: #5865F2; 
+            --primary-glow: rgba(88, 101, 242, 0.5);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
         }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+        /* --- UNIVERSAL FIXES --- */
+        @view-transition { navigation: auto; }
+        @keyframes breathe {
+            0% { background-position: 50% 0%; }
+            50% { background-position: 50% 20%; }
+            100% { background-position: 50% 0%; }
+        }
+        html { overflow-y: scroll; } 
+
+        body { 
+            margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: var(--bg-color); color: var(--text-main); 
+            display: flex; flex-direction: column; min-height: 100vh; 
+            background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-color) 70%); 
+            background-attachment: fixed;
         }
 
-        /* NAVIGATION */
-        nav {
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
+        /* FIXED NAVBAR */
+        nav { 
+            height: 80px; padding: 0 40px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border); background: var(--nav-bg); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-sizing: border-box;
         }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.2rem; }
+        .brand img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+        /* HERO */
+        .container { 
+            text-align: center; flex: 1; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; padding: 20px;
         }
+        h1 { font-size: 4.5rem; margin-bottom: 20px; letter-spacing: -2px; line-height: 1; }
+        h1 span { color: var(--primary); text-shadow: 0 0 30px var(--primary-glow); }
+        p { color: var(--text-muted); font-size: 1.3rem; line-height: 1.6; margin-bottom: 50px; max-width: 650px; }
 
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            max-width: 800px;
-        }
+        .btn { background: var(--primary); color: white; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 20px -5px var(--primary-glow); transition: 0.2s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -5px var(--primary-glow); }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        h1 span {
-            color: var(--primary);
-        }
-
-        p.subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        /* BUTTONS */
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid #334155;
-        }
-
-        /* FEATURES GRID */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            width: 100%;
-            padding: 50px 20px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: auto;
-            padding: 40px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        footer { margin-top: auto; border-top: 1px solid var(--border); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; margin: 0 10px; }
+        footer a:hover { color: var(--primary); }
     </style>
 </head>
 <body>
-
-<nav>
-        <a href="index.html" class="logo">Cranix</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="bot.html">Bot</a>
-            <a href="products.html">Products</a>
-        </div>
+    <nav>
+        <a href="index.html" class="brand"><img src="logo.png" alt="Logo">Cranix Ltd</a>
+        <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a><a href="https://discord.gg/NTkDRtyzDX" target="_blank">Support</a></div>
     </nav>
-
-    <div class="hero">
-        <h1>Level up with <span>Cranix</span></h1>
-        <p class="subtitle">The ultimate multipurpose bot for your server. Moderation, Music, and Memes all in one place.</p>
-        
-        <div class="btn-group">
-            <!-- Replace '#' with your actual Discord Invite Link -->
-            <a href="#" class="btn btn-primary">Add to Discord</a>
-            <a href="https://discord.gg/" class="btn btn-secondary">Support Server</a>
-        </div>
+    <div class="container">
+        <h1>Level up with <br><span>Cranix Bot</span></h1>
+        <p>The ultimate discord assistant. Moderation, music, and management.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1439190131553861702&permissions=8&integration_type=0&scope=bot" target="_blank" class="btn">Invite Bot</a>
     </div>
-
-    <div class="features">
-        <div class="card">
-            <h3>🛡️ Moderation</h3>
-            <p>Keep your community safe with advanced auto-moderation, kick/ban commands, and logging.</p>
-        </div>
-        <div class="card">
-            <h3>🎵 High Quality Music</h3>
-            <p>Play your favorite tunes from various sources with lag-free playback and volume control.</p>
-        </div>
-        <div class="card">
-            <h3>⚙️ Customizable</h3>
-            <p>Configure prefixes, welcome messages, and roles through an easy-to-use dashboard.</p>
-        </div>
-    </div>
-
+<!-- UPDATED FOOTER STRUCTURE -->
     <footer>
-        &copy; 2024 Cranix Bot. Hosted securely on Cloudflare.
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <div>&copy; 2025 Cranix Ltd. All rights reserved.</div>
+            <div style="font-size: 0.9rem;">
+                <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Privacy Policy</a>
+                <span style="opacity: 0.3; margin: 0 10px;">&bull;</span>
+                <a href="terms.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Terms of Service</a>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>
