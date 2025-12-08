@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranix - Products</title>
+    <style>
+        :root { --bg: #0f172a; --card: #1e293b; --primary: #3b82f6; --text: #f8fafc; --text-gray: #94a3b8; }
+        body { margin: 0; font-family: sans-serif; background: var(--bg); color: var(--text); }
+        
+        nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { color: var(--text-gray); text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        h1 { font-size: 3rem; margin-bottom: 40px; text-align: center; }
+        
+        /* PRODUCT LIST */
+        .product-row { display: flex; background: var(--card); border-radius: 12px; overflow: hidden; margin-bottom: 30px; border: 1px solid #334155; }
+        .product-image { background: #334155; width: 200px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+        .product-info { padding: 30px; flex: 1; }
+        .product-info h3 { margin-top: 0; color: var(--primary); font-size: 1.5rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Cranix</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bot.html">Bot</a>
+            <a href="products.html">Products</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Our Products</h1>
+
+        <!-- Product 1 -->
+        <div class="product-row">
+            <div class="product-image">🚀</div> <!-- Replace with <img> tag later -->
+            <div class="product-info">
+                <h3>Cranix Server Manager</h3>
+                <p>A powerful dashboard to manage your home servers, visualize Docker containers, and monitor uptime.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-row">
+            <div class="product-image">🛡️</div>
+            <div class="product-info">
+                <h3>Cranix VPN</h3>
+                <p>Secure, private networking solutions for small businesses and gaming communities.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

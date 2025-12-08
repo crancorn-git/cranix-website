@@ -3,165 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cranix Bot</title>
+    <title>Cranix - Home</title>
     <style>
-        /* GLOBAL STYLES */
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-secondary: #94a3b8;
-        }
+        /* SAME DARK THEME */
+        :root { --bg: #0f172a; --card: #1e293b; --primary: #3b82f6; --text: #f8fafc; --text-gray: #94a3b8; }
+        body { margin: 0; font-family: sans-serif; background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* NAVIGATION BAR */
+        nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { color: var(--text-gray); text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+        /* HERO */
+        .hero { text-align: center; padding: 100px 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        h1 { font-size: 4rem; margin: 0 0 20px 0; }
+        h1 span { color: var(--primary); }
+        p { font-size: 1.5rem; color: var(--text-gray); max-width: 600px; margin-bottom: 50px; }
 
-        /* NAVIGATION */
-        nav {
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        h1 span {
-            color: var(--primary);
-        }
-
-        p.subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        /* BUTTONS */
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid #334155;
-        }
-
-        /* FEATURES GRID */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            width: 100%;
-            padding: 50px 20px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: auto;
-            padding: 40px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        /* CHOICE CARDS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 800px; }
+        .card { background: var(--card); padding: 40px; border-radius: 12px; border: 1px solid #334155; text-align: center; transition: 0.2s; text-decoration: none; color: var(--text); }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card h2 { color: var(--primary); margin-top: 0; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Cranix</div>
-        <!-- You can add login links here later -->
+        <a href="index.html" class="logo">Cranix</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bot.html">Bot</a>
+            <a href="products.html">Products</a>
+        </div>
     </nav>
 
     <div class="hero">
-        <h1>Level up with <span>Cranix</span></h1>
-        <p class="subtitle">The ultimate multipurpose bot for your server. Moderation, Music, and Memes all in one place.</p>
-        
-        <div class="btn-group">
-            <!-- Replace '#' with your actual Discord Invite Link -->
-            <a href="#" class="btn btn-primary">Add to Discord</a>
-            <a href="https://discord.gg/" class="btn btn-secondary">Support Server</a>
+        <h1>Welcome to <span>Cranix</span></h1>
+        <p>Building the future of digital tools, one line of code at a time.</p>
+
+        <div class="grid">
+            <a href="bot.html" class="card">
+                <h2>🤖 Cranix Bot</h2>
+                <p>The ultimate multipurpose Discord assistant.</p>
+                <strong>View Bot &rarr;</strong>
+            </a>
+            <a href="products.html" class="card">
+                <h2>📦 Our Products</h2>
+                <p>Check out our other software, tools, and services.</p>
+                <strong>View Products &rarr;</strong>
+            </a>
         </div>
     </div>
-
-    <div class="features">
-        <div class="card">
-            <h3>🛡️ Moderation</h3>
-            <p>Keep your community safe with advanced auto-moderation, kick/ban commands, and logging.</p>
-        </div>
-        <div class="card">
-            <h3>🎵 High Quality Music</h3>
-            <p>Play your favorite tunes from various sources with lag-free playback and volume control.</p>
-        </div>
-        <div class="card">
-            <h3>⚙️ Customizable</h3>
-            <p>Configure prefixes, welcome messages, and roles through an easy-to-use dashboard.</p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2024 Cranix Bot. Hosted securely on Cloudflare.
-    </footer>
 
 </body>
 </html>
