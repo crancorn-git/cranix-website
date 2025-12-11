@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,4 +128,135 @@
         </div>
     </footer>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+    <title>Terms of Service - Cranix Ltd</title>
+    <style>
+        /* --- CORPORATE THEME --- */
+        :root {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.9);
+            --primary: #ffffff;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: #262626;
+        }
+
+        /* --- UNIVERSAL FIXES --- */
+        @view-transition { navigation: auto; }
+        @keyframes breathe {
+            0% { background-position: 50% 0%; }
+            50% { background-position: 50% 20%; }
+            100% { background-position: 50% 0%; }
+        }
+
+        html { overflow-y: scroll; } 
+        
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-color); color: var(--text-main); display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* FIXED NAVBAR */
+        nav { 
+            height: 80px; padding: 0 40px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border); background: var(--nav-bg); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-sizing: border-box;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.2rem; }
+        .brand img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* LEGAL CONTENT */
+        .container { 
+            max-width: 800px; margin: 0 auto; padding: 60px 20px; flex: 1; 
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1; }
+        .date { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 50px; display: block; }
+
+        h2 { margin-top: 50px; font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; color: var(--primary); }
+        h3 { margin-top: 30px; font-size: 1.1rem; color: #fff; }
+        
+        p, ul { color: var(--text-muted); line-height: 1.7; font-size: 1rem; margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        strong { color: #fff; }
+
+        footer { margin-top: auto; border-top: 1px solid var(--border); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+        footer a { color: var(--text-muted); text-decoration: none; transition: 0.2s; margin: 0 10px; }
+        footer a:hover { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand"><img src="logo.png" alt="Logo">Cranix Ltd</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="https://discord.gg/NTkDRtyzDX" target="_blank">Support</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Terms of Service</h1>
+        <span class="date">Last Updated: December 8, 2025</span>
+
+        <p>By downloading, installing, or using any software provided by Cranix Ltd ("we", "us"), you agree to be bound by these terms.</p>
+
+        <h2>1. CranixCloud Terms</h2>
+        <ul>
+            <li><strong>Affiliation:</strong> CranixCloud is an independent project and is NOT affiliated with SoundCloud.</li>
+            <li><strong>Copyright:</strong> You agree not to use CranixCloud to download content illegally. You are responsible for complying with all applicable copyright laws.</li>
+        </ul>
+
+        <h2>2. Cranix Bot Terms</h2>
+        <ul>
+            <li><strong>Abuse:</strong> You may not use Cranix Bot to spam, harass, or violate Discord's Terms of Service.</li>
+            <li><strong>Availability:</strong> We strive for 99% uptime but do not guarantee uninterrupted service. We reserve the right to ban specific servers for abuse.</li>
+        </ul>
+
+        <h2>3. CranixOne Terms</h2>
+        <ul>
+            <li><strong>Acceptable Use:</strong> You agree not to use CranixOne for illegal activities, hate speech, or harassment. We operate a zero-tolerance policy.</li>
+            <li><strong>Beta Status:</strong> As software currently in development, CranixOne may contain bugs or experience data loss. Use at your own risk during the beta phase.</li>
+        </ul>
+
+        <h2>4. Cranexus Terms (Fair Play)</h2>
+        <ul>
+            <li><strong>No Cheating:</strong> Cranexus is an analytics tool. It does not inject code into games or provide unfair advantages (cheats/hacks). Attempting to use our software for cheating is prohibited.</li>
+            <li><strong>API Usage:</strong> We respect the API Terms of Service of the game developers (Riot, Valve, etc.). We are not affiliated with these developers.</li>
+        </ul>
+
+        <h2>5. CraNotes Terms</h2>
+        <ul>
+            <li><strong>Data Responsibility:</strong> While we encrypt data, you are responsible for maintaining backups of your critical notes, especially during the beta testing phase.</li>
+        </ul>
+
+        <h2>6. Software "As Is"</h2>
+        <p><strong>DISCLAIMER OF WARRANTY:</strong> ALL CRANIX LTD SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. WE DO NOT GUARANTEE THAT THE SOFTWARE WILL BE BUG-FREE OR SECURE.</p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>We reserve the right to modify these terms at any time. Continued use of our software constitutes acceptance of the new terms.</p>
+    </div>
+
+<!-- UPDATED FOOTER STRUCTURE -->
+    <footer>
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <div>&copy; 2025 Cranix Ltd. All rights reserved.</div>
+            <div style="font-size: 0.9rem;">
+                <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Privacy Policy</a>
+                <span style="opacity: 0.3; margin: 0 10px;">&bull;</span>
+                <a href="terms.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+>>>>>>> 4eec756a83ebd24b7379d352532dc2ed81afd64d
 </html>
