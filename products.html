@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+    <title>Cranix - Products</title>
+    <style>
+        /* --- CORPORATE THEME --- */
+        :root {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.9);
+            --primary: #ffffff;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border: #262626;
+        }
+
+        /* --- UNIVERSAL FIXES --- */
+        @view-transition { navigation: auto; }
+        @keyframes breathe {
+            0% { background-position: 50% 0%; }
+            50% { background-position: 50% 20%; }
+            100% { background-position: 50% 0%; }
+        }
+        html { overflow-y: scroll; } 
+        
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* FIXED NAVBAR */
+        nav { 
+            height: 80px; padding: 0 40px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid var(--border); background: var(--nav-bg); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-sizing: border-box;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.2rem; }
+        .brand img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+        /* HERO */
+        .hero {
+            text-align: center; padding: 80px 20px 60px 20px; max-width: 800px; margin: 0 auto;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        h1 { font-size: 4.5rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1; }
+        h1 span { color: var(--text-muted); }
+        p.subtitle { color: var(--text-muted); font-size: 1.3rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+
+        /* GRID */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 80px 20px; width: 100%; box-sizing: border-box; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card {
+            background-color: #121212; border: 1px solid var(--border); border-radius: 16px; padding: 30px; text-decoration: none; color: var(--text-main); transition: transform 0.2s, border-color 0.2s;
+            display: flex; flex-direction: column; justify-content: space-between; min-height: 160px; position: relative; overflow: hidden;
+        }
+        .card:hover { transform: translateY(-4px); }
+        .card h3 { font-size: 1.5rem; margin: 0 0 10px 0; font-weight: 600; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; }
+        .status-row { margin-top: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; border-radius: 100px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .arrow { font-size: 1.2rem; opacity: 0; transform: translateX(-10px); transition: 0.2s; }
+        .card:hover .arrow { opacity: 1; transform: translateX(0); }
+
+        /* COLORS */
+        .card.bot:hover { border-color: #5865F2; } .card.bot .tag { color: #5865F2; border-color: rgba(88, 101, 242, 0.3); }
+        .card.cloud:hover { border-color: #FF5500; } .card.cloud .tag { color: #FF5500; border-color: rgba(255, 85, 0, 0.3); }
+        .card.one:hover { border-color: #3b82f6; } .card.one .tag { color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); }
+        .card.notes:hover { border-color: #EAB308; } .card.notes .tag { color: #EAB308; border-color: rgba(234, 179, 8, 0.3); }
+        .card.nexus:hover { border-color: #EF4444; } .card.nexus .tag { color: #EF4444; border-color: rgba(239, 68, 68, 0.3); }
+
+        footer { margin-top: auto; border-top: 1px solid var(--border); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand"><img src="logo.png" alt="Logo">Cranix Ltd</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="https://discord.gg/NTkDRtyzDX" target="_blank">Support</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Product <span>Ecosystem</span></h1>
+        <p class="subtitle">A suite of tools designed for gamers, developers, and communities. Explore the future of software.</p>
+    </div>
+    <div class="container">
+        <div class="grid">
+            <a href="bot.html" class="card bot"><div><h3>Cranix Bot</h3><p>The ultimate multipurpose Discord assistant.</p></div><div class="status-row"><span class="tag">Available</span><span class="arrow">&rarr;</span></div></a>
+            <a href="cloud.html" class="card cloud"><div><h3>Cranix Cloud</h3><p>Ad-free desktop player for SoundCloud.</p></div><div class="status-row"><span class="tag">Available</span><span class="arrow">&rarr;</span></div></a>
+            <a href="one.html" class="card one"><div><h3>Cranix One</h3><p>Unified communication platform for teams.</p></div><div class="status-row"><span class="tag">In Dev</span><span class="arrow">&rarr;</span></div></a>
+            <a href="notes.html" class="card notes"><div><h3>Cranix Notes</h3><p>Lightning fast, minimal note-taking.</p></div><div class="status-row"><span class="tag">In Dev</span><span class="arrow">&rarr;</span></div></a>
+            <a href="nexus.html" class="card nexus"><div><h3>Cranix Nexus</h3><p>Competitive game stats and intelligence.</p></div><div class="status-row"><span class="tag">In Dev</span><span class="arrow">&rarr;</span></div></a>
+        </div>
+    </div>
+    <!-- UPDATED FOOTER STRUCTURE -->
+    <footer>
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <div>&copy; 2025 Cranix Ltd. All rights reserved.</div>
+            <div style="font-size: 0.9rem;">
+                <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Privacy Policy</a>
+                <span style="opacity: 0.3; margin: 0 10px;">&bull;</span>
+                <a href="terms.html" style="color: inherit; text-decoration: none; opacity: 0.7; transition: 0.2s;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
