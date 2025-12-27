@@ -73,22 +73,11 @@
         <div style="margin-bottom: 20px;"><span class="secret-badge">Restricted Access</span></div>
         <h1>Server <br><span>Installer.</span></h1>
         <p>Automated deployment for the Cranix Minecraft experience. <br>One-click modpack installation and updates.</p>
-        <a href="https://github.com/crancorn-git/modpackinstaller/releases/tag/1.0.0" class="btn" id="download-btn">Download v1.0.0</a>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://github.com/crancorn-git/modpackinstaller/releases/download/1.0.0/Cranix-Windows-Installer.zip" class="btn">Download for Windows</a>
+            <a href="https://github.com/crancorn-git/modpackinstaller/releases/download/1.0.0/Cranix-Mac-Installer.zip" class="btn" style="background: transparent; border: 1px solid var(--primary); color: var(--primary);">Download for Mac</a>
+        </div>
     </div>
-
-    <script>
-        // Fetch specific tag assets to ensure we get the installer executable
-        fetch('https://api.github.com/repos/crancorn-git/modpackinstaller/releases/tags/1.0.0')
-            .then(response => response.json())
-            .then(data => {
-                // Look for .exe first, fallback to .jar if needed
-                const asset = data.assets.find(a => a.name.endsWith('.exe')) || data.assets.find(a => a.name.endsWith('.jar'));
-                if (asset) {
-                    document.getElementById('download-btn').href = asset.browser_download_url;
-                }
-            })
-            .catch(e => console.log('GitHub API Error:', e));
-    </script>
 
     <footer>
         <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
